@@ -1,0 +1,28 @@
+.rectangle2 {
+  box-sizing: border-box;
+  height: 60px;
+  width: 540px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 34px 0 #e3e3e3;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.inputContainer {
+  margin-top: 4%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.icon {
+  margin-left: 25px;
+  position: absolute;
+  height: 25px;
+}

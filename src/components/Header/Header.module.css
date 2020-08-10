@@ -1,0 +1,18 @@
+.rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 1440px;
+  background: linear-gradient(
+    182.65deg,
+    #78c9ce 0%,
+    #2496a2 99.98%,
+    #2496a2 100%
+  );
+}
+
+.shape {
+  height: 18.45px;
+  width: 178.22px;
+}

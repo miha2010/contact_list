@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 0;
+}
+
+a {
+  text-decoration: none;
+}
+.allContacts {
+  height: 22px;
+  width: 95px;
+  color: #2da1ad;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line3 {
+  color: #bbc4c3;
+  margin: 0 3%;
+  /* height: 15px;
+  width: 3px; */
+  /* border: 1px solid #bbc4c3; */
+}
+
+.myFavorites {
+  height: 22px;
+  width: 102px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.line2 {
+  box-sizing: border-box;
+  height: 2px;
+  width: 1260px;
+  border: 1px solid #2da1ad;
+}
