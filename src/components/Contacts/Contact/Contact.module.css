@@ -1,0 +1,59 @@
+.container {
+  height: 150px;
+  width: 270px;
+  border: 1px solid rgba(187, 196, 195, 0.4);
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 1%;
+  position: relative;
+}
+
+.container:hover {
+  border: 1px solid #2da1ad;
+  cursor: pointer;
+}
+
+.img {
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 66px;
+  width: 66px;
+  border: 3px solid rgba(187, 196, 195, 0.3);
+}
+
+.name {
+  height: 22px;
+  width: 141px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.iconsRow {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.rightIcons {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+}

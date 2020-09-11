@@ -1,0 +1,11 @@
+export { default as man1 } from "./man1.jpg";
+export { default as man2 } from "./man2.jpg";
+export { default as man3 } from "./man3.jpg";
+export { default as man4 } from "./man4.jpg";
+export { default as woman1 } from "./woman1.jpg";
+export { default as woman2 } from "./woman2.jpg";
+export { default as woman3 } from "./woman3.jpg";
+export { default as woman4 } from "./woman4.jpg";
+export { default as woman5 } from "./woman5.jpg";
+export { default as woman6 } from "./woman6.jpg";
+export { default as woman7 } from "./woman7.jpg";
