@@ -6,6 +6,9 @@ import {
   SearchBar,
   AllContacts,
   Favorites,
+  AddNew,
+  EditContact,
+  ContactDetail,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -14,13 +17,21 @@ const App = () => {
     <div className={styles.container}>
       <Router>
         <Header />
-        <Navbar />
-        <SearchBar />
         <Switch>
+          <Route path="/add-new">
+            <AddNew />
+          </Route>
+          <Route path="/contact-details">
+            <ContactDetail />
+          </Route>
           <Route path="/favorites">
+            <Navbar />
+            <SearchBar />
             <Favorites />
           </Route>
           <Route path="/">
+            <Navbar />
+            <SearchBar />
             <AllContacts />
           </Route>
         </Switch>

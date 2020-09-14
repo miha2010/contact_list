@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+}
+
+.uploadImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 186px;
+  width: 186px;
+  border: 3px solid rgba(187, 196, 195, 0.3);
+  background-color: rgba(45, 161, 173, 0.4);
+  border-radius: 50%;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.divider {
+  height: 2px;
+  width: 630px;
+  border: 1px solid #2da1ad;
+  margin: 20px 0;
+}
+
+.heading {
+  display: flex;
+  padding: 20px 0;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.headingImg {
+  height: 15px;
+  width: 15px;
+}
+.headingText {
+  height: 19px;
+  width: 66px;
+  color: #2da1ad;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 19px;
+  margin: 0;
+}
+
+.email {
+  height: 19px;
+  width: 200px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+
+.place {
+  height: 17px;
+  width: 43px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+
+.number {
+  height: 20px;
+  width: 121px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.naslov {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bigName {
+  margin: 0;
+  height: 34px;
+  width: 218px;
+  color: #bbc4c3;
+  font-family: Lato;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 34px;
+  text-align: center;
+}

@@ -24,6 +24,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .line3 {
@@ -48,6 +49,6 @@ a {
 .line2 {
   box-sizing: border-box;
   height: 2px;
-  width: 1260px;
+  width: 100%;
   border: 1px solid #2da1ad;
 }

@@ -29,5 +29,23 @@
 
 .addNewText {
   color: #2da1ad;
-  margin-bottom: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .addNew {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: 60px;
+    width: 360px;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+
+  .addNewText {
+    margin-left: 15px;
+  }
 }

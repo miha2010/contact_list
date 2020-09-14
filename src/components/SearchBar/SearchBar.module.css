@@ -1,7 +1,7 @@
 .rectangle2 {
   box-sizing: border-box;
   height: 60px;
-  width: 540px;
+  width: 100%;
   border: 1px solid #eaeaea;
   border-radius: 4px;
   background-color: #ffffff;
@@ -13,7 +13,7 @@
 }
 
 .inputContainer {
-  margin-top: 4%;
+  margin-top: 8%;
   display: flex;
   justify-content: left;
   align-items: center;

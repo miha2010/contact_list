@@ -27,7 +27,7 @@
 }
 
 .name {
-  height: 22px;
+  /* height: 22px; */
   width: 141px;
   color: #bbc4c3;
   font-family: Lato;
@@ -36,7 +36,7 @@
   letter-spacing: 0;
   line-height: 22px;
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .iconsRow {
@@ -56,4 +56,30 @@
 .icon {
   height: 15px;
   width: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: 60px;
+    width: 360px;
+    border: 1px solid rgba(187, 196, 195, 0.4);
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+
+  .iconsRow {
+    position: initial;
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
+  }
+
+  .icon {
+    margin-right: 20px;
+  }
 }
