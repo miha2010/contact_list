@@ -58,6 +58,13 @@
   width: 15px;
 }
 
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: row-reverse;
@@ -77,6 +84,11 @@
     display: flex;
     width: 90%;
     justify-content: flex-end;
+  }
+
+  .avatarContainer {
+    display: flex;
+    flex-direction: row;
   }
 
   .icon {

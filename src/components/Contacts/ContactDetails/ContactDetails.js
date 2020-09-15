@@ -24,11 +24,12 @@ const AddNew = () => {
           </div>
           <div>
             <img src={emptyHeart} height="13" width="15" />
-            <img src={editIcon} height="13" width="15" />
+            <Link to="/contact-edit">
+              <img src={editIcon} height="13" width="15" />
+            </Link>
           </div>
         </div>
         <div className={styles.divider} />
-
         <div className={styles.naslov}>
           <div className={styles.heading}>
             <img src={emailIcon} className={styles.headingImg} />

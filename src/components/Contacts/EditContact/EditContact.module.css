@@ -153,3 +153,25 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    /* height: 60px;
+    width: 360px; */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactDetails {
+    width: 85%;
+  }
+
+  .divider {
+    width: 100%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+}

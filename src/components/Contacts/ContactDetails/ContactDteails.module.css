@@ -20,6 +20,10 @@
   flex-direction: column;
   margin-top: 100px;
 }
+
+.back {
+}
+
 .divider {
   height: 2px;
   width: 630px;
@@ -93,6 +97,7 @@
 
 .bigName {
   margin: 0;
+  margin-left: 20px;
   height: 34px;
   width: 218px;
   color: #bbc4c3;

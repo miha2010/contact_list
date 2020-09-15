@@ -153,3 +153,27 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactDetails {
+    width: 85%;
+  }
+
+  .divider {
+    width: 100%;
+  }
+
+  .input {
+    margin-bottom: 4%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
