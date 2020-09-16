@@ -9,8 +9,8 @@ import fullHeart from "../../../Images/fullHeart.svg";
 import emptyHeart from "../../../Images/emptyHeart.svg";
 
 const Contact = ({
-  setAllContacts,
-  allContacts,
+  setContacts,
+  contacts,
   contact: { name, img, isFavorite, id },
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,9 +20,9 @@ const Contact = ({
   };
 
   const deleteContact = () => {
-    const newContacts = allContacts.filter((contact) => contact.id !== id);
+    const newContacts = contacts.filter((contact) => contact.id !== id);
 
-    setAllContacts(newContacts);
+    setContacts(newContacts);
 
     localStorage.setItem("contacts", JSON.stringify(newContacts));
 
@@ -30,15 +30,15 @@ const Contact = ({
   };
 
   const handleLike = () => {
-    const contact = allContacts.find((contact) => contact.id === id);
+    const contact = contacts.find((contact) => contact.id === id);
 
-    const newContacts = allContacts.map((contact) =>
+    const newContacts = contacts.map((contact) =>
       contact.id === id
         ? { ...contact, isFavorite: !contact.isFavorite }
         : contact
     );
 
-    setAllContacts(newContacts);
+    setContacts(newContacts);
 
     localStorage.setItem("contacts", JSON.stringify(newContacts));
   };

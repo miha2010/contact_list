@@ -1,31 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./App.module.css";
-import {
-  Header,
-  Navbar,
-  SearchBar,
-  AllContacts,
-  Favorites,
-  AddNew,
-  EditContact,
-  ContactDetail,
-  DeleteDialog,
-} from "./components";
+import { Header, Navbar, SearchBar, AllContacts, Favorites, AddNew, EditContact, ContactDetail, DeleteDialog } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import {
-  man1,
-  man2,
-  man3,
-  man4,
-  woman1,
-  woman2,
-  woman3,
-  woman4,
-  woman5,
-  woman6,
-  woman7,
-} from "./Images/people";
+import { man1, man2, man3, man4, woman1, woman2, woman3, woman4, woman5, woman6, woman7 } from "./Images/people";
 
 const contacts = [
   { id: 0, isFavorite: true, name: "Addie Hernandez ", img: woman1 },
@@ -41,9 +19,10 @@ const contacts = [
   { id: 10, isFavorite: false, name: "Sam Manning", img: man4 },
 ];
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-
 const App = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem("contacts")));
+
   if (!localStorage.getItem("contacts")) {
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }
@@ -54,7 +33,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/add-new">
-            <AddNew />
+            <AddNew setContacts={contacts} contacts={contacts} />
           </Route>
           <Route path="/contact-details">
             <ContactDetail />
@@ -65,15 +44,10 @@ const App = () => {
           <Route path="/contact-delete">
             <DeleteDialog />
           </Route>
-          <Route path="/favorites">
+          <Route path={["/home", "/favorites"]}>
             <Navbar />
-            <SearchBar />
-            <Favorites />
-          </Route>
-          <Route path="/">
-            <Navbar />
-            <SearchBar />
-            <AllContacts />
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} contacts={contacts} setContacts={setContacts} />
+            <AllContacts searchTerm={searchTerm} setContacts={setContacts} contacts={contacts} />
           </Route>
         </Switch>
       </Router>

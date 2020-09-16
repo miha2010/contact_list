@@ -7,17 +7,29 @@ import phoneIcon from "../../../Images/phoneIcon.svg";
 import emptyHeart from "../../../Images/emptyHeart.svg";
 import fullHeart from "../../../Images/fullHeart.svg";
 import editIcon from "../../../Images/editIcon.svg";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
-const AddNew = () => {
+const ContactDetails = () => {
   return (
     <div className={styles.container}>
+      <BrowserView viewClassName={styles.test}>
+        <h1> This is rendered only in browser </h1>
+      </BrowserView>
+      <MobileView>
+        <h1> This is rendered only on mobile </h1>
+      </MobileView>
       <div className={styles.uploadImage}>
         {/* <img src={uploadImageIcon} width="20" height="20" /> */}
       </div>
       <div className={styles.contactDetails}>
         <div className={styles.header}>
           <div style={{ display: "flex" }}>
-            <Link to="/" className={styles.back}>
+            <Link to="/home" className={styles.back}>
               Back
             </Link>
             <h4 className={styles.bigName}>Addie Hernandez</h4>
@@ -52,4 +64,4 @@ const AddNew = () => {
   );
 };
 
-export default AddNew;
+export default ContactDetails;

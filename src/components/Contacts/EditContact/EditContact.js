@@ -14,7 +14,7 @@ const AddNew = () => {
         <img src={uploadImageIcon} width="20" height="20" />
       </div>
       <div className={styles.contactDetails}>
-        <Link to="/" className={styles.back}>
+        <Link to="/home" className={styles.back}>
           Back
         </Link>
         <div className={styles.divider} />
@@ -50,10 +50,10 @@ const AddNew = () => {
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <Link to="/">
+          <Link to="/home">
             <button className={styles.cancelButton}>Cancel</button>
           </Link>
-          <Link to="/">
+          <Link to="/home">
             <button className={styles.saveButton}>Save</button>
           </Link>
         </div>

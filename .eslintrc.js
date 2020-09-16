@@ -8,20 +8,22 @@ module.exports = {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
-  parser: "babel-eslint",
   parserOptions: {
-    ecmaVersion: 6,
     ecmaFeatures: {
-      experimentalObjectRestSpread: true,
+      jsx: true,
     },
+    ecmaVersion: 2018,
+    sourceType: "module",
   },
-  plugins: ["react", "import", "react-hooks"],
+  parser: "babel-eslint",
+  plugins: ["react"],
   rules: {
+    "import/extensions": 0,
+    "react/prop-types": 0,
+    "linebreak-style": 0,
     "react/state-in-constructor": 0,
     "import/prefer-default-export": 0,
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-depts": 1,
-    "max-len": [2, 250],
+    "max-len": [2, 500],
     "no-multiple-empty-lines": [
       "error",
       {
