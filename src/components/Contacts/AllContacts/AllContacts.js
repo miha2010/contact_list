@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-import Contact from "../Contact/Contact";
-import plusIcon1 from "../../../Images/plusIcon.svg";
-
-import styles from "./AllContacts.module.css";
+import Contact from '../Contact/Contact';
+import styles from './AllContacts.module.css';
+import plusIcon1 from '../../../Images/plusIcon.svg';
 
 const AllContacts = ({ searchTerm, contacts, setContacts }) => {
-    let isFavorites = useLocation().pathname.includes('/favorites');
-  
-  let filteredContacts = contacts
-    .filter((contact) => contact.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
+  const isFavorites = useLocation().pathname.includes('/favorites');
+
+  const filteredContacts = contacts
+    .filter((contact) => contact.fullName.toLowerCase().startsWith(searchTerm.toLowerCase()))
     .filter((contact) => !isFavorites || contact.isFavorite);
 
   return (
@@ -20,7 +19,7 @@ const AllContacts = ({ searchTerm, contacts, setContacts }) => {
         <p className={styles.addNewText}>Add new</p>
       </Link>
       {filteredContacts.map((contact) => (
-        <Contact setContacts={setContacts} contacts={contacts} contact={contact} />
+        <Contact key={contact.id} setContacts={setContacts} contacts={contacts} contact={contact} />
       ))}
     </div>
   );

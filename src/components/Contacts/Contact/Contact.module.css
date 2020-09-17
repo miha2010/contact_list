@@ -8,14 +8,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  cursor: pointer;
   margin: 1%;
   position: relative;
 }
 
 .container:hover {
   border: 1px solid #2da1ad;
-  cursor: pointer;
 }
 
 .img {
@@ -58,11 +56,16 @@
   width: 15px;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 .avatarContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

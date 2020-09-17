@@ -1,10 +1,11 @@
 .container {
   display: flex;
+  width: 900px;
 }
 
 .uploadImage {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   height: 186px;
   width: 186px;
@@ -12,7 +13,7 @@
   background-color: rgba(45, 161, 173, 0.4);
   border-radius: 50%;
   margin-right: 50px;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .contactDetails {
@@ -21,7 +22,8 @@
   margin-top: 100px;
 }
 
-.back {
+.editIcon {
+  margin-left: 38px;
 }
 
 .divider {
@@ -33,14 +35,15 @@
 
 .heading {
   display: flex;
-  padding: 20px 0;
-  width: 100px;
-  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  justify-content: start;
 }
 
 .headingImg {
-  height: 15px;
-  width: 15px;
+  height: 18px;
+  width: 18px;
+  margin-right: 20px;
 }
 .headingText {
   height: 19px;
@@ -50,8 +53,27 @@
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 19px;
-  margin: 0;
+  line-height: 15px;
+  margin: 0 20px;
+}
+
+.headingImgPhone {
+  height: 18px;
+  width: 18px;
+  margin-right: 20px;
+  margin-top: 19px;
+}
+
+.headingTextPhone {
+  height: 19px;
+  width: 66px;
+  color: #2da1ad;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin: 19px 20px 0 0;
 }
 
 .email {
@@ -62,6 +84,7 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: 19px;
+  margin-top: 0;
 }
 
 .place {
@@ -73,6 +96,7 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: 17px;
+  margin-left: 20px;
 }
 
 .number {
@@ -83,6 +107,7 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
+  margin-left: 20px;
 }
 
 .naslov {
@@ -110,9 +135,16 @@
 }
 
 @media only screen and (max-width: 600px) {
+  *{
+    margin: 0;
+  }
+  
   .container {
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin: 0;
   }
   .uploadImage {
     height: 70px;
@@ -121,8 +153,23 @@
     background-color: rgba(45, 161, 173, 0.4);
   }
 
-  .divider {
+  .header{
     width: 100%;
+    height: 45px;
+    display: flex;
+  }
+
+
+  .divider2 {
+    height: 3px;
+    width: 100%;
+    border: 1px solid #BBC4C3;
+    opacity: 0.4;
+  }
+
+  .divider {
+    width: 90%;
+    align-self: center;
   }
 }
 

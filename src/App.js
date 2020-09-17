@@ -1,30 +1,16 @@
-import React, { useState } from "react";
-import styles from "./App.module.css";
-import { Header, Navbar, SearchBar, AllContacts, Favorites, AddNew, EditContact, ContactDetail, DeleteDialog } from "./components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { man1, man2, man3, man4, woman1, woman2, woman3, woman4, woman5, woman6, woman7 } from "./Images/people";
-
-const contacts = [
-  { id: 0, isFavorite: true, name: "Addie Hernandez ", img: woman1 },
-  { id: 1, isFavorite: true, name: "Oscar Arnold", img: man1 },
-  { id: 2, isFavorite: false, name: "Isaiah McGuire", img: man2 },
-  { id: 3, isFavorite: true, name: "Ann Schneider", img: woman2 },
-  { id: 4, isFavorite: true, name: "Agnes Terru", img: woman3 },
-  { id: 5, isFavorite: false, name: "Rose Bush", img: woman4 },
-  { id: 6, isFavorite: false, name: "Duane Reese", img: man3 },
-  { id: 7, isFavorite: true, name: "Mae Chandler", img: woman5 },
-  { id: 8, isFavorite: false, name: "Evelyn Weaver", img: woman6 },
-  { id: 9, isFavorite: true, name: "Catherine Moore", img: woman7 },
-  { id: 10, isFavorite: false, name: "Sam Manning", img: man4 },
-];
+import { Header, Navbar, SearchBar, AllContacts, AddNew, EditContact, ContactDetail } from './components';
+import styles from './App.module.css';
+import mockContacts from './mockContacts';
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem("contacts")));
+  const [searchTerm, setSearchTerm] = useState('');
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')));
 
-  if (!localStorage.getItem("contacts")) {
-    localStorage.setItem("contacts", JSON.stringify(contacts));
+  if (!localStorage.getItem('contacts')) {
+    localStorage.setItem('contacts', JSON.stringify(mockContacts));
   }
 
   return (
@@ -33,18 +19,18 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/add-new">
-            <AddNew setContacts={contacts} contacts={contacts} />
+            <AddNew setContacts={setContacts} contacts={contacts} />
           </Route>
-          <Route path="/contact-details">
-            <ContactDetail />
+          <Route path="/contact-details/:id">
+            <ContactDetail setContacts={setContacts} contacts={contacts} />
           </Route>
-          <Route path="/contact-edit">
-            <EditContact />
+          <Route path="/contact-edit/:id">
+            <EditContact setContacts={setContacts} contacts={contacts} />
           </Route>
-          <Route path="/contact-delete">
-            <DeleteDialog />
+          <Route exact path="/">
+            <Redirect to="/home" />
           </Route>
-          <Route path={["/home", "/favorites"]}>
+          <Route path={['/home', '/favorites']}>
             <Navbar />
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} contacts={contacts} setContacts={setContacts} />
             <AllContacts searchTerm={searchTerm} setContacts={setContacts} contacts={contacts} />
