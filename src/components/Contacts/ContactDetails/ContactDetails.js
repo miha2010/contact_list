@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BrowserView } from 'react-device-detect';
 import styles from './ContactDteails.module.css';
@@ -9,17 +9,13 @@ import emptyHeart from '../../../Images/emptyHeart.svg';
 import fullHeart from '../../../Images/fullHeart.svg';
 import editIcon from '../../../Images/editIcon.svg';
 
-const ContactDetails = ({ setContacts, contacts }) => {
+import ContactsContext from '../../../context/ContactsContext';
+
+const ContactDetails = () => {
+  const { contacts, likeContact } = useContext(ContactsContext);
   const { id } = useParams();
+
   const currentContact = contacts.find((contact) => contact.id === id);
-
-  const handleLike = () => {
-    const newContacts = contacts.map((contact) => (contact.id === id ? { ...contact, isFavorite: !contact.isFavorite } : contact));
-
-    setContacts(newContacts);
-
-    localStorage.setItem('contacts', JSON.stringify(newContacts));
-  };
 
   return (
     <>
@@ -33,10 +29,10 @@ const ContactDetails = ({ setContacts, contacts }) => {
                 <h4 className={styles.bigName}>{currentContact.fullName}</h4>
               </div>
               <div>
-                <a onClick={handleLike}>
+                <span onClick={() => likeContact(id)}>
                   <img src={currentContact.isFavorite ? fullHeart : emptyHeart} className={styles.icon} />
-                </a>
-                <Link to="/contact-edit">
+                </span>
+                <Link to="/contact-edit/">
                   <img src={editIcon} className="editIcon" height="18" width="18" />
                 </Link>
               </div>

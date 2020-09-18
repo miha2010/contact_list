@@ -1,45 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import DeleteDialog from '../../DeleteDialog/DeleteDialog';
 import styles from './Contact.module.css';
+import DeleteDialog from '../../DeleteDialog/DeleteDialog';
 import deleteIcon from '../../../Images/delete.svg';
 import editIcon from '../../../Images/edit.svg';
 import fullHeart from '../../../Images/fullHeart.svg';
 import emptyHeart from '../../../Images/emptyHeart.svg';
+import ContactsContext from '../../../context/ContactsContext';
 
-const Contact = ({ setContacts, contacts, contact: { fullName, image, isFavorite, id } }) => {
+const Contact = ({ contact: { fullName, image, isFavorite, id } }) => {
+  const { likeContact, deleteContact } = useContext(ContactsContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
 
-  const deleteContact = () => {
-    const newContacts = contacts.filter((contact) => contact.id !== id);
-
-    setContacts(newContacts);
-
-    localStorage.setItem('contacts', JSON.stringify(newContacts));
-
-    toggleModal();
-  };
-
-  const handleLike = () => {
-    const newContacts = contacts.map((contact) => (contact.id === id ? { ...contact, isFavorite: !contact.isFavorite } : contact));
-
-    setContacts(newContacts);
-
-    localStorage.setItem('contacts', JSON.stringify(newContacts));
-  };
-
   return (
     <div key={id} className={styles.container}>
       <div className={styles.iconsRow}>
-        {isModalOpen && (
-          <DeleteDialog toggleModal={toggleModal} deleteContact={deleteContact} />
-        )}
-        <a onClick={handleLike}>
+        {isModalOpen && <DeleteDialog toggleModal={toggleModal} deleteContact={() => deleteContact(id, toggleModal)} />}
+        <span onClick={() => likeContact(id)}>
           <img src={isFavorite ? fullHeart : emptyHeart} className={styles.icon} />
-        </a>
+        </span>
         <div className={styles.rightIcons}>
           <Link to={`/contact-edit/${id}`}>
             <img src={editIcon} className={styles.icon} />

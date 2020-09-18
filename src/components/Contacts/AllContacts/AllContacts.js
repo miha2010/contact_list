@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import Contact from '../Contact/Contact';
 import styles from './AllContacts.module.css';
 import plusIcon1 from '../../../Images/plusIcon.svg';
+import ContactsContext from '../../../context/ContactsContext';
 
-const AllContacts = ({ searchTerm, contacts, setContacts }) => {
+const AllContacts = ({ searchTerm }) => {
+  const { contacts } = useContext(ContactsContext);
   const isFavorites = useLocation().pathname.includes('/favorites');
 
   const filteredContacts = contacts
@@ -19,7 +21,7 @@ const AllContacts = ({ searchTerm, contacts, setContacts }) => {
         <p className={styles.addNewText}>Add new</p>
       </Link>
       {filteredContacts.map((contact) => (
-        <Contact key={contact.id} setContacts={setContacts} contacts={contacts} contact={contact} />
+        <Contact key={contact.id} contact={contact} />
       ))}
     </div>
   );

@@ -1,56 +1,74 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
+import React, { useState, useContext } from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+
 import styles from './EditContact.module.css';
-import uploadImageIcon from '../../../Images/uploadImageIcon.svg';
 import personIcon from '../../../Images/personIcon.svg';
 import emailIcon from '../../../Images/emailIcon.svg';
 import phoneIcon from '../../../Images/phoneIcon.svg';
 import plusIconOval from '../../../Images/plusIconOval.svg';
+import ContactsContext from '../../../context/ContactsContext.js';
 
-const EditContact = ({ contacts, setContacts }) => {
-  // ako ima id.. onda prikazati sve isto, samo sa populiranim vrijednostima
+// edit ima delete gore desno...
 
-  // ?... edit ima delete gore desno...
-  // { contact && <img src={delete} />}
-  // edit ima sa populirane vrijednosti (fullName, email)...
-  // edit ima toliko number fieldova (prepopuliranih) koliko ima brojeva...
-
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [numbers, setNumbers] = useState([{ number: '', type: '' }]);
-  const [image, setImage] = useState(null);
-
+const EditContact = () => {
+  const { contacts, setContacts } = useContext(ContactsContext);
+  const [contactDetails, setContactDetails] = useState({ fullName: '', email: '', numbers: [], image: '', id: uuidv4(), isFavorite: false });
   const history = useHistory();
+  const { id } = useParams();
+
+  const currentContact = contacts.find((contact) => contact.id === id); // DOBIJEMO KONTAKTA
+
+  React.useEffect(() => {
+    if (id) {
+      setContactDetails(currentContact);
+    }
+  }, []);
 
   const handleChangeInput = (event, i) => {
     const { name, value } = event.target;
-    const values = [...numbers];
+    const values = [...contactDetails.numbers];
 
     values[i][name] = value;
 
-    setNumbers(values);
+    setContactDetails({ ...contactDetails, numbers: values });
   };
 
   const handleAddInput = () => {
-    setNumbers([...numbers, { number: '', type: '' }]);
+    setContactDetails({ ...contactDetails, numbers: [...contactDetails.numbers, { number: '', type: '' }] });
   };
 
   const handleRemoveInput = (i) => {
-    const values = [...numbers];
+    const values = [...contactDetails.numbers];
 
     values.splice(i, 1);
 
-    setNumbers(values);
+    setContactDetails({ ...contactDetails, numbers: values });
+  };
+
+  const fileChangedHandler = (event) => {
+    const reader = new FileReader();
+    const file = event.target.files[0];
+
+    reader.onloadend = () => {
+      setContactDetails({ ...contactDetails, image: reader.result });
+    };
+
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newContact = { id: uuidv4(), isFavorite: false, email, fullName, numbers, image };
+    let newContacts;
 
-    const newContacts = [...contacts, newContact];
+    if (id) {
+      const prevContacts = contacts.filter((contact) => contact.id !== id);
+
+      newContacts = [...prevContacts, contactDetails];
+    } else {
+      newContacts = [...contacts, contactDetails];
+    }
 
     setContacts(newContacts);
 
@@ -59,33 +77,21 @@ const EditContact = ({ contacts, setContacts }) => {
     history.push('/home');
   };
 
-  const fileChangedHandler = (event) => {
-    const reader = new FileReader();
-    const file = event.target.files[0];
-
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
-
-    reader.readAsDataURL(file);
-  };
-
   return (
-
     <div className={styles.container}>
       <div className={styles.uploadImage}>
-        <input type="file" onChange={fileChangedHandler} />
-        <img src={uploadImageIcon} width="20" height="20" />
+        <img src={contactDetails.image || 'https://bonds-and-shares.com/wp-content/uploads/2019/07/placeholder-user.png'} className={styles.image} />
       </div>
       <div className={styles.contactDetails}>
         <Link to="/home" className={styles.back}>Back</Link>
         <div className={styles.divider} />
+        <input type="file" onChange={fileChangedHandler} />
         <div>
           <div className={styles.heading}>
             <img src={personIcon} className={styles.headingImg} />
             <h5 className={styles.headingText}>full name</h5>
           </div>
-          <input value={fullName} onChange={(e) => setFullName(e.target.value)} type="text" placeholder="Full name" className={styles.input} />
+          <input value={contactDetails.fullName} onChange={(e) => setContactDetails({ ...contactDetails, fullName: e.target.value })} type="text" placeholder="Full name" className={styles.input} />
         </div>
         <div className={styles.divider} />
         <div>
@@ -93,7 +99,7 @@ const EditContact = ({ contacts, setContacts }) => {
             <img src={emailIcon} className={styles.headingImg} />
             <h5 className={styles.headingText}>email</h5>
           </div>
-          <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" className={styles.input} />
+          <input value={contactDetails.email} onChange={(e) => setContactDetails({ ...contactDetails, email: e.target.value })} type="text" placeholder="Email" className={styles.input} />
         </div>
         <div className={styles.divider} />
         <div>
@@ -101,15 +107,15 @@ const EditContact = ({ contacts, setContacts }) => {
             <img src={phoneIcon} className={styles.headingImg} />
             <h5 className={styles.headingText}>numbers</h5>
           </div>
-          {numbers.map((field, i) => (
+          {contactDetails.numbers.map((field, i) => (
             <div key={`${field}-${i}`}>
               <input type="text" name="number" className={styles.input} value={field.number} placeholder="Number" onChange={(e) => handleChangeInput(e, i)} />
               <input type="text" name="type" className={styles.smallInput} value={field.type} placeholder="Cell" onChange={(e) => handleChangeInput(e, i)} />
-              <button className={styles.circle} onClick={() => handleRemoveInput(i)}>X</button>
+              <button type="button" className={styles.circle} onClick={() => handleRemoveInput(i)}>X</button>
             </div>
           ))}
           <div className={styles.addNumberContainer}>
-            <button className={styles.circle} onClick={handleAddInput}>
+            <button type="button" className={styles.circle} onClick={handleAddInput}>
               <img src={plusIconOval} />
             </button>
             <h5 className={styles.addNumber}>ADD</h5>
@@ -117,9 +123,9 @@ const EditContact = ({ contacts, setContacts }) => {
         </div>
         <div className={styles.buttonContainer}>
           <Link to="/home">
-            <button className={styles.cancelButton}>Cancel</button>
+            <button type="button" className={styles.cancelButton}>Cancel</button>
           </Link>
-          <button onClick={handleSubmit} className={styles.saveButton}>
+          <button type="button" onClick={handleSubmit} className={styles.saveButton}>
             Save
           </button>
         </div>

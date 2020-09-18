@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -9,7 +9,10 @@ import emailIcon from '../../../Images/emailIcon.svg';
 import phoneIcon from '../../../Images/phoneIcon.svg';
 import plusIconOval from '../../../Images/plusIconOval.svg';
 
-const AddNew = ({ contacts, setContacts }) => {
+import ContactsContext from '../../../context/ContactsContext';
+
+const AddNew = () => {
+  const { contacts, setContacts } = useContext(ContactsContext);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [numbers, setNumbers] = useState([{ number: '', type: '' }]);
@@ -98,11 +101,11 @@ const AddNew = ({ contacts, setContacts }) => {
             <div key={`${field}-${i}`}>
               <input type="text" name="number" className={styles.input} value={field.number} placeholder="Number" onChange={(e) => handleChangeInput(e, i)} />
               <input type="text" name="type" className={styles.smallInput} value={field.type} placeholder="Cell" onChange={(e) => handleChangeInput(e, i)} />
-              <button className={styles.circle} onClick={() => handleRemoveInput(i)}>X</button>
+              <button type="button" className={styles.circle} onClick={() => handleRemoveInput(i)}>X</button>
             </div>
           ))}
           <div className={styles.addNumberContainer}>
-            <button className={styles.circle} onClick={handleAddInput}>
+            <button type="button" className={styles.circle} onClick={handleAddInput}>
               <img src={plusIconOval} />
             </button>
             <h5 className={styles.addNumber}>ADD</h5>
@@ -110,9 +113,9 @@ const AddNew = ({ contacts, setContacts }) => {
         </div>
         <div className={styles.buttonContainer}>
           <Link to="/home">
-            <button className={styles.cancelButton}>Cancel</button>
+            <button type="button" className={styles.cancelButton}>Cancel</button>
           </Link>
-          <button onClick={handleSubmit} className={styles.saveButton}>
+          <button type="button" onClick={handleSubmit} className={styles.saveButton}>
             Save
           </button>
         </div>
