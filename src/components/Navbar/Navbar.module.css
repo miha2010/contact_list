@@ -33,7 +33,24 @@ a {
     color: #bbc4c3;
     /* font-family: Lato; */
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     /* letter-spacing: 0; */
     /* line-height: 22px; */
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .link {
+    padding: 15px;
+  }
+
+  .line2 {
+    width: 90%;
+  }
 }

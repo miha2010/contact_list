@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { Header, Navbar, SearchBar, AllContacts, AddNew, EditContact, ContactDetail } from './components';
+import { Header, Navbar, SearchBar, AllContacts, EditContact, ContactDetail } from './components';
 import styles from './App.module.css';
 
 const App = () => {

@@ -12,12 +12,15 @@
   font-weight: 500;
 }
 
+.rectangle2:focus {
+  outline: 2px solid #2496a2;
+}
+
 .inputContainer {
-  margin-top: 4%;
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-bottom: 60px;
+  margin: 10% 0;
   height: 50px;
   width:30%;
 }
@@ -26,4 +29,11 @@
   margin-left: 25px;
   position: absolute;
   height: 25px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .inputContainer {
+    width:90%;
+  }
 }

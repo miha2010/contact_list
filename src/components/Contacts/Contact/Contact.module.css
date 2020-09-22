@@ -71,22 +71,22 @@
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: row-reverse;
-    align-items: center;
     padding: 20px;
-    justify-content: flex-start;
-    box-sizing: border-box;
     height: 60px;
-    width: 360px;
-    border: 1px solid rgba(187, 196, 195, 0.4);
-    border-radius: 4px;
-    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .iconsRow {
     position: initial;
     display: flex;
-    width: 90%;
     justify-content: flex-end;
+    margin-right: 30px;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 400px;
   }
 
   .avatarContainer {
@@ -94,7 +94,16 @@
     flex-direction: row;
   }
 
+  .img {
+    width: 46px;
+    height: 46px;
+  }
+
   .icon {
-    margin-right: 20px;
+    margin-right: 25px;
+  }
+
+  .iconLast {
+    margin: 0;  
   }
 }

@@ -27,7 +27,7 @@ const Contact = ({ contact: { fullName, image, isFavorite, id } }) => {
             <img src={editIcon} className={styles.icon} />
           </Link>
           <a onClick={toggleModal} href="#openModal-about">
-            <img src={deleteIcon} className={styles.icon} />
+            <img src={deleteIcon} className={styles.iconLast} />
           </a>
         </div>
       </div>

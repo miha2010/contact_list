@@ -1,183 +1,276 @@
 .container {
-  display: flex;
-}
-
-.uploadImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 186px;
-  width: 186px;
-  border-radius: 50%;
-  margin-right: 50px;
-  margin-top: 100px;
-  position: relative;
-}
-
-.image {
-    height: 186px;
-    width: 186px;
-    border-radius: 50%;
-}
-
-
-.contactDetails {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-}
-
-.divider {
-  height: 2px;
-  width: 630px;
-  border: 1px solid #2da1ad;
-  margin: 20px 0;
-}
-
-.heading {
-  display: flex;
-  padding: 20px 0;
-  width: 100px;
-  justify-content: space-between;
-}
-
-.headingImg {
-  height: 15px;
-  width: 15px;
-}
-
-.headingText {
-  height: 19px;
-  width: 66px;
-  color: #2da1ad;
-  font-family: Lato;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 19px;
-  margin: 0;
-}
-
-.input {
-  height: 60px;
-  width: 300px;
-  border: 1px solid #bbc4c3;
-  opacity: 0.4;
-  padding: 0 20px;
-  border-radius: 4px;
-}
-
-.smallInput {
-  height: 60px;
-  padding: 0 20px;
-  width: 240px;
-  opacity: 0.4;
-  margin: 0 30px;
-  border: 1px solid #bbc4c3;
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.back {
-  width: 50px;
-  border: none;
-  background-color: white;
-}
-
-.addNumber {
-  height: 17px;
-  width: 76px;
-  color: #2da1ad;
-  font-family: Lato;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 17px;
-}
-
-.buttonContainer {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.cancelButton {
-  height: 42px;
-  width: 160px;
-  border-radius: 28.5px;
-  background-color: #bbc4c3;
-  color: #ffffff;
-  font-family: Lato;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 17px;
-  text-align: center;
-  border: none;
-}
-
-.saveButton {
-  height: 42px;
-  border: none;
-  width: 160px;
-  border-radius: 28.5px;
-  background-color: #2da1ad;
-  color: #ffffff;
-  font-family: Lato;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 17px;
-  text-align: center;
-}
-
-.addNumber {
-  height: 31px;
-  width: 76px;
-  color: #2da1ad;
-  font-family: Lato;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 17px;
-  margin: 0;
-}
-
-.addNumberContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 150px;
-  margin: 20px 0;
-}
-
-.circle {
-  border: 1px solid #2da1ad;
-  background: white;
-  height: 31px;
-  width: 31px;
-  border-radius: 100%;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-@media only screen and (max-width: 600px) {
-  .container {
-    /* height: 60px;
-    width: 360px; */
+    display: flex;
+  }
+  
+  .uploadImage {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .fileInput {
+    margin-top: 20px;
+    width: 33%;
+  }
+  
+  .image {
+      height: 186px;
+      width: 186px;
+      border-radius: 50%;
+  }
+  
+  
+  .contactDetails {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  
+  .divider {
+    height: 2px;
+    width: 630px;
+    border: 1px solid #2da1ad;
+    margin: 20px 0;
+  }
+  
+  .heading {
+    display: flex;
+    padding: 20px 0;
+    width: 100px;
+    justify-content: space-between;
+  }
+  
+  .headingImg {
+    height: 15px;
+    width: 15px;
+  }
+  
+  .headingText {
+    height: 19px;
+    width: 66px;
+    color: #2da1ad;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin: 0;
+  }
+  
+  .input {
+    height: 60px;
+    width: 100%;
+    border: 1px solid #bbc4c3;
+    opacity: 0.4;
+    padding: 0 20px;
+    border-radius: 4px;
+  }
+  
+  .smallInput {
+    height: 60px;
+    padding: 0 20px;
+    width: 240px;
+    opacity: 0.4;
+    margin: 0 30px;
+    border: 1px solid #bbc4c3;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 10px;
+  }
+  
+  .back {
+    width: 50px;
+    border: none;
+    background-color: white;
+  }
+  
+  .addNumber {
+    height: 17px;
+    width: 76px;
+    color: #2da1ad;
+    font-family: Lato;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .cancelButton {
+    height: 42px;
+    width: 160px;
+    border-radius: 28.5px;
+    background-color: #bbc4c3;
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 17px;
+    text-align: center;
+    border: none;
+  }
+  
+  .saveButton {
+    height: 42px;
+    border: none;
+    width: 160px;
+    border-radius: 28.5px;
+    background-color: #2da1ad;
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .inputNumber {
+    height: 60px;
+    width: 100%;
+    border: 1px solid #bbc4c3;
+    opacity: 0.4;
+    padding: 0 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .addNumber {
+    height: 31px;
+    width: 76px;
+    color: #2da1ad;
+    font-family: Lato;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin: 0;
+  }
+  
+  .addNumberContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    margin: 20px 0;
+  }
+  
+  .circle {
+    border: 1px solid #2da1ad;
+    background: white;
+    height: 31px;
+    width: 31px;
+    border-radius: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .container {
+      /* height: 60px;
+      width: 360px; */
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .uploadImage {
+      margin: 0;
+      position: initial;
+    }
+    
+    .image {
+      height: 156px;
+      width: 156px;
+      border-radius: 50%;
+    }
+  
+  
+  .input:focus {
+    outline: 2px solid #2496a2;
+  }
+    
+    .phoneInputs {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .smallInput {
+      width: 80%;
+      margin: 10px 0 0 0;
+    }
+  
+  .circleButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-top: 10px;
+  }
+  .addNumberContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    margin: 20px 0;
+  }
+  .addNumber {
+    display: flex;
     align-items: center;
   }
 
-  .contactDetails {
-    width: 85%;
+  .image {
+      margin-top: 20px;
   }
-
-  .divider {
-    width: 100%;
+  
+    .contactDetails {
+      width: 85%;
+      margin-top: 0;    
+    }
+  
+    .divider {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  
+    .cancelButton {
+      height: 40px;
+      width: 155px;
+      
+    }
+    
+    .saveButton {
+      height: 40px;
+      width: 155px;
+    }
+    
+  
+    .buttonContainer {
+     margin-bottom: 10%;
+    }
+  
+    .backButtonContainer {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .back {
+      padding: 20px 0;
+    }
+  
+    .line2 {
+      height: 3px;
+      width: 100%;
+      background-color: #BBC4C3;
+      opacity: 0.4;
+    }
   }
-
-  .buttonContainer {
-    display: flex;
-    justify-content: space-around;
-  }
-}
+  

@@ -10,9 +10,22 @@
     #2496a2 99.98%,
     #2496a2 100%
   );
+  position: relative;
 }
 
 .shape {
   height: 18.45px;
   width: 178.22px;
+}
+
+.rectangle2 {
+  position: absolute;
+  bottom: 0;
+  height: 7px;
+  width: 100%;
+  opacity: 0.3;
+  transform: scaleY(-1);
+  background-color: white;
+  /* background-color: #78c9ce; */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }

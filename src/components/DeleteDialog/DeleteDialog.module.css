@@ -1,18 +1,3 @@
-/* .background {
-  height: 100vh;
-  width: 100vw;
-  opacity: 0.4;
-  background-color: #000000;
-} */
-/* 
-.modal {
-  height: 240px;
-  width: 480px;
-  border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 14px 0 rgba(99, 109, 255, 0.27);
-} */
-
 .delete {
   height: 19px;
   width: 100%;
@@ -46,12 +31,14 @@
   width: 160px;
   border-radius: 100px;
   background-color: #bbc4c3;
+  border: none;
 }
 
 .deleteButton {
   height: 42px;
   width: 160px;
   border-radius: 100px;
+  border: none;
   background: linear-gradient(
     182.65deg,
     #78c9ce 0%,
@@ -90,9 +77,13 @@
   opacity: 1;
   pointer-events: auto;
 }
-.modal > div {
+
+.text {
+    margin: 0;
+}
+
+.modalDiv {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   height: 240px;
@@ -103,4 +94,54 @@
   position: relative;
   margin: 10% auto;
   /* padding: 20px; */
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.deleteContainer {
+    width: 100%;
+    padding: 7px 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .modalDiv {
+        width: 90%;
+        height: 300px;
+    }
+
+
+.deleteContainer {
+    width: 100%;
+    padding: 18px 30px;
+}
+
+    .content {
+        width: 90%;
+    }
+
+    .buttonContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        /* justify-content: space-around; */
+        width: 100%;
+    }
+    .cancelButton {
+        margin-top: 10px;
+    }
+    
 }
