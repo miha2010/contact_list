@@ -20,7 +20,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  margin: 10% 0;
+  margin: 4% 0;
   height: 50px;
   width:30%;
 }
@@ -35,5 +35,6 @@
 @media only screen and (max-width: 600px) {
   .inputContainer {
     width:90%;
+    margin: 10% 0;
   }
 }

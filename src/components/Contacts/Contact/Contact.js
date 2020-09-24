@@ -32,7 +32,7 @@ const Contact = ({ contact: { fullName, image, isFavorite, id } }) => {
         </div>
       </div>
       <Link className={styles.avatarContainer} to={`/contact-details/${id}`}>
-        <img className={styles.img} src={image} alt="avatar" />
+        <img className={styles.img} src={image || 'https://bonds-and-shares.com/wp-content/uploads/2019/07/placeholder-user.png'} alt="avatar" />
         <p className={styles.name}>{fullName}</p>
       </Link>
     </div>

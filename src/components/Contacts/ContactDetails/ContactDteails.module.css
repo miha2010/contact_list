@@ -3,21 +3,32 @@
   width: 900px;
 }
 
-.uploadImage {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  height: 186px;
-  width: 186px;
-  border: 3px solid rgba(187, 196, 195, 0.3);
-  background-color: rgba(45, 161, 173, 0.4);
+.circularImage {
+  width: 250px;
+  height: 250px;
+  margin-top: 80px;
+  margin-right: 40px;
+}
+
+.circularImage img{
+  width: 100%;
   border-radius: 50%;
-  margin-right: 50px;
-  margin-top: 60px;
+  border: 3px solid rgba(161, 255, 244, 0.3);
+}
+
+
+.back {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
 }
 
 .contactDetails {
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin-top: 100px;
 }
@@ -28,9 +39,16 @@
 
 .divider {
   height: 2px;
-  width: 630px;
+  width: 100%;
   border: 1px solid #2da1ad;
   margin: 20px 0;
+}
+
+.headingNumbers {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  margin: 5% 0;
 }
 
 .heading {
@@ -38,6 +56,9 @@
   padding: 0;
   width: 100%;
   justify-content: start;
+  margin: 5% 0;
+  align-items: center;
+  height: 18px;
 }
 
 .headingImg {
@@ -45,8 +66,8 @@
   width: 18px;
   margin-right: 20px;
 }
+
 .headingText {
-  height: 19px;
   width: 66px;
   color: #2da1ad;
   font-family: Lato;
@@ -54,7 +75,7 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: 15px;
-  margin: 0 20px;
+  margin: 0 37px 0 0;
 }
 
 .headingImgPhone {
@@ -64,8 +85,8 @@
   margin-top: 19px;
 }
 
+
 .headingTextPhone {
-  height: 19px;
   width: 66px;
   color: #2da1ad;
   font-family: Lato;
@@ -73,7 +94,7 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: 15px;
-  margin: 19px 20px 0 0;
+  margin: 0 20px 0 0;
 }
 
 .email {
@@ -85,6 +106,7 @@
   letter-spacing: 0;
   line-height: 19px;
   margin-top: 0;
+  text-decoration: underline;
 }
 
 .place {
@@ -108,22 +130,41 @@
   letter-spacing: 0;
   line-height: 20px;
   margin-left: 20px;
+  text-decoration: underline;
 }
 
 .naslov {
   display: flex;
   justify-content: space-between;
+  margin-left: 10%;
+}
+
+.numberContainer {
+  margin-top: 0;
+  margin-bottom: 20%;
 }
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerAndButton {
+  display: flex;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  width: 80px;
   justify-content: space-between;
 }
 
 .bigName {
   margin: 0;
   margin-left: 20px;
-  height: 34px;
+  /* height: 34px; */
   width: 218px;
   color: #bbc4c3;
   font-family: Lato;
@@ -138,19 +179,77 @@
   *{
     margin: 0;
   }
-  
-  .container {
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+
+  .circularImage {
+    height: 56px;
+    width: 56px;
     margin: 0;
   }
+
+  .bigName {
+    height: 28px;
+    width: 183px;
+    color: #ADB8B6;
+    font-family: Lato;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+ 
+  .nameAndImage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin: 3% 5%;
+  }
+
+  .contactDetails {
+    margin-top: 0;
+  }
+
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header {
+    padding: 0 8%;
+  }
+
+  .headingNumbers {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+
+  .email {
+    margin-left: 20px;
+    margin-bottom: 60px;
+  }
+
+  .headingText {
+    margin-bottom: 20px;
+  }
+  .headingTextPhone {
+  margin-bottom: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .uploadImage {
     height: 70px;
     width: 70px;
     border: 3px solid rgba(187, 196, 195, 0.3);
     background-color: rgba(45, 161, 173, 0.4);
+  }
+
+  .icons {
+    align-items: initial;
   }
 
   .header{
@@ -159,9 +258,8 @@
     display: flex;
   }
 
-
   .divider2 {
-    height: 3px;
+    /* height: 3px; */
     width: 100%;
     border: 1px solid #BBC4C3;
     opacity: 0.4;
@@ -169,10 +267,8 @@
 
   .divider {
     width: 90%;
+    margin-top: 0;
     align-self: center;
   }
 }
 
-.test {
-  color: red;
-}

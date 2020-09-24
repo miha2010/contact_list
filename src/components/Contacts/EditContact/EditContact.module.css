@@ -11,7 +11,7 @@
 
   .fileInput {
     margin-top: 20px;
-    width: 33%;
+    width: 34%;
   }
   
   .image {
@@ -72,7 +72,7 @@
     padding: 0 20px;
     width: 240px;
     opacity: 0.4;
-    margin: 0 30px;
+    /* margin: 0 30px; */
     border: 1px solid #bbc4c3;
     border-radius: 4px;
     background-color: #ffffff;
@@ -93,6 +93,10 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: 17px;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .buttonContainer {
@@ -133,7 +137,7 @@
 
   .inputNumber {
     height: 60px;
-    width: 100%;
+    width: 50%;
     border: 1px solid #bbc4c3;
     opacity: 0.4;
     padding: 0 20px;
@@ -151,10 +155,19 @@
     line-height: 17px;
     margin: 0;
   }
-  
-  .addNumberContainer {
+  .backButtonContainer {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* display: 'flex', justifyContent: 'space-between', width: '100%'  */
+  }
+  .circle:hover {
+      cursor: pointer;
+  }
+  .addNumberContainer {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 150px;
     margin: 20px 0;
@@ -170,8 +183,21 @@
     display: inline-block;
     vertical-align: middle;
   }
+
+  button:hover {
+      cursor: pointer;
+  }
+
+  .phoneInputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   
   @media only screen and (max-width: 600px) {
+    .inputNumber {
+        width: 100%;
+     }
     .container {
       /* height: 60px;
       width: 360px; */
@@ -221,8 +247,9 @@
     margin: 20px 0;
   }
   .addNumber {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
   }
 
   .image {
@@ -260,6 +287,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      /* display: 'flex', justifyContent: 'space-between', width: '100%'  */
     }
     
     .back {
