@@ -58,13 +58,13 @@ const ContactDetails = () => {
                       <h5 className={styles.headingTextPhone}>numbers</h5>
                       <div className={styles.right}>
                         {
-                  currentContact.numbers.map(({ type, number }) => (
-                    <p className={styles.numberContainer}>
-                      <span className={styles.place}>{type.toUpperCase()}</span>{' '}
-                      <a href={`callto:${number}`} className={styles.number}>{number}</a>
-                    </p>
-                  ))
-            }
+                            currentContact.numbers.map(({ type, number }) => (
+                              <p className={styles.numberContainer}>
+                                <span className={styles.place}>{type.toUpperCase()}</span>
+                                <a href={`callto:${number}`} className={styles.number}>{number}</a>
+                              </p>
+                            ))
+                      }
                       </div>
                     </div>
                   </div>

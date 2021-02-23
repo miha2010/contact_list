@@ -8,7 +8,7 @@ import ContactsContext from '../../../context/ContactsContext';
 
 const AllContacts = ({ searchTerm }) => {
   const { contacts } = useContext(ContactsContext);
-  const isFavorites = useLocation().pathname.includes('/favorites');
+  const isFavorites = useLocation().pathname === '/favorites';
 
   const filteredContacts = contacts
     .filter((contact) => contact.fullName.toLowerCase().startsWith(searchTerm.toLowerCase()))

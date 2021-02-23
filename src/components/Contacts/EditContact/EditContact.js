@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import DeleteDialog from '../../DeleteDialog/DeleteDialog';
@@ -23,7 +23,7 @@ const EditContact = () => {
 
   const currentContact = contacts.find((contact) => contact.id === id);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (id) {
       setContactDetails(currentContact);
     }
@@ -54,11 +54,11 @@ const EditContact = () => {
     const reader = new FileReader();
     const file = event.target.files[0];
 
+    reader.readAsDataURL(file);
+
     reader.onloadend = () => {
       setContactDetails({ ...contactDetails, image: reader.result });
     };
-
-    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e) => {
@@ -114,9 +114,9 @@ const EditContact = () => {
          && (
          <>
            <div className={styles.backButtonContainer}>
-             <Link to="/home" className={styles.back}>
+             <button type="button" className={styles.back} onClick={() => history.goBack()}>
                <img src={backIcon} className="editIcon" height="23" width="23" />
-             </Link>
+             </button>
              <a onClick={toggleModal} href="#openModal-about">
                <img src={deleteIcon} className={styles.iconLast} />
              </a>
@@ -139,7 +139,7 @@ const EditContact = () => {
               <img src={emailIcon} className={styles.headingImg} />
               <h5 className={styles.headingText}>email</h5>
             </div>
-            <input type="email" value={contactDetails.email} onChange={(e) => setContactDetails({ ...contactDetails, email: e.target.value })} placeholder="Email" className={styles.input} />
+            <input type="email" required value={contactDetails.email} onChange={(e) => setContactDetails({ ...contactDetails, email: e.target.value })} placeholder="Email" className={styles.input} />
           </div>
           <div className={styles.divider} />
           <div>
@@ -164,9 +164,9 @@ const EditContact = () => {
             </div>
           </div>
           <div className={styles.buttonContainer}>
-            <Link to="/home">
-              <button type="button" className={styles.cancelButton}>Cancel</button>
-            </Link>
+            {/* <Link> */}
+            <button type="button" className={styles.cancelButton} onClick={() => history.goBack()}>Cancel</button>
+            {/* </Link> */}
             <button type="submit" className={styles.saveButton}>
               Save
             </button>

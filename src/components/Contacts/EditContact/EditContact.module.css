@@ -60,7 +60,7 @@
   
   .input {
     height: 60px;
-    width: 100%;
+    width: 50%;
     border: 1px solid #bbc4c3;
     opacity: 0.4;
     padding: 0 20px;
@@ -146,7 +146,7 @@
   }
   
   .addNumber {
-    height: 31px;
+    height: 40px;
     width: 76px;
     color: #2da1ad;
     font-family: Lato;
@@ -174,10 +174,13 @@
   }
   
   .circle {
-    border: 1px solid #2da1ad;
+    margin-top: 5px;
+    /* border: 1px solid #2da1ad; */
+    border: 1px solid #bbc4c3;
+    color: #bbc4c3;
     background: white;
-    height: 31px;
-    width: 31px;
+    height: 40px;
+    width: 40px;
     border-radius: 100%;
     position: relative;
     display: inline-block;
@@ -195,6 +198,10 @@
   }
   
   @media only screen and (max-width: 600px) {
+    .input {
+      width: 100%;
+    }
+
     .inputNumber {
         width: 100%;
      }
@@ -234,7 +241,8 @@
   
   .circleButton {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-end;
     align-items: center;
     width: 20%;
     margin-top: 10px;
