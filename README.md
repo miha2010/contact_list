@@ -1,7 +1,7 @@
 ## Phonebook / Contact List web application
 ## Task for: TYPECAST
 
-[Live Version](typeqast-contact-list.netlify.app)
+[Live Version](https://typeqast-contact-list.netlify.app)
 
 
 Features:
