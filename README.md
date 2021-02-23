@@ -1,7 +1,7 @@
 ## Phonebook / Contact List web application
 ## Task for: TYPECAST
 
-[Live Version](https://jovial-perlman-ee9043.netlify.app/)
+[Live Version](typeqast-contact-list.netlify.app)
 
 
 Features:
